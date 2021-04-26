@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:praktikum_firebase/first_screen.dart';
+import 'package:praktikum_firebase/register_page.dart';
 import 'package:praktikum_firebase/sign_in.dart';
 
 class LoginPage extends StatefulWidget {
@@ -95,6 +96,27 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 10),
               Text("OR"),
               SizedBox(height: 10), _signInButton(),
+              Container(
+                alignment: Alignment.bottomCenter,
+                margin: EdgeInsets.only(bottom: 20),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Text("Don\’t have account ?",
+                      //style: TextStyle(color: Colors.white),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context, MaterialPageRoute(builder: (context) => RegisterPage()));
+                      },
+                      child: Text("Register here",
+                      //style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
