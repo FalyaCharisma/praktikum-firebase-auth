@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:praktikum_firebase/auth_service.dart';
 import 'package:praktikum_firebase/first_screen.dart';
+import 'package:praktikum_firebase/profil_page.dart';
 import 'package:praktikum_firebase/sign_in_sign_up.dart';
 
 
@@ -89,7 +90,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         //Go to first screen
                         Navigator.push(
                           context, MaterialPageRoute(
-                            builder: (context) => FirstScreen(),
+                            builder: (context) => ProfilePage(),
                           ),
                         );
                       }
