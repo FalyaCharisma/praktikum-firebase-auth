@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:praktikum_firebase/auth_service.dart';
-import 'package:praktikum_firebase/first_screen.dart';
+import 'package:praktikum_firebase/login_page.dart';
 import 'package:praktikum_firebase/profil_page.dart';
 import 'package:praktikum_firebase/sign_in_sign_up.dart';
 
@@ -80,6 +80,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   Container(
                     width: double.infinity,
+                    color: Color(0xFF4f4f4f),
                     child: RaisedButton(
                       child: Text("Login", style: TextStyle(color: Colors.white)),
                       onPressed:() async{
@@ -113,6 +114,26 @@ class _RegisterPageState extends State<RegisterPage> {
                     }
                 ),
               ),
+               Container(
+                  alignment: Alignment.bottomCenter,
+                  margin: EdgeInsets.only(bottom: 20),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Text("Already have account ?"),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(context,
+                          MaterialPageRoute(
+                            builder: (context)=> LoginPage())
+                          );
+                        },
+                        child: Text("Login Here", style: TextStyle(fontWeight: FontWeight.w700),
+                        ),
+                      )
+                    ],
+                  ),
+               )
             ],
           ),
         ),

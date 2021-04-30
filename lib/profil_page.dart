@@ -12,7 +12,6 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lime,
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 20),child: SafeArea(child: CustomScrollView(
             slivers: <Widget>[
@@ -23,47 +22,33 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Row(
-                          children: <Widget>[
-                            Text(
-                              "Hello",
-                              style: TextStyle(
-                                fontSize: 48,
-                                fontWeight: FontWeight.w900,
-                                letterSpacing: 1.5,
-                              ),
-                            ),
-                            SizedBox(width: 16),
-                            Expanded(
-                              child: Divider(
-                                thickness: 3,
-                                // color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(width: 40),
-                          ],
-                        ),
                         Text(
                           "Profile",
                           style: TextStyle(
-                              fontWeight: FontWeight.w300,
-                              fontSize: 36,
-                              letterSpacing: 5),
+                            fontWeight: FontWeight.w300,
+                            fontSize: 36,
+                            letterSpacing: 5
+                          ),
                         ),
                       ],
                     ),
-                  ),Padding(padding: EdgeInsets.only(top:20),
-                  child: Text("Email",
-                  style: TextStyle(fontSize: 20),
                   ),
+                  
+                  Padding(padding: EdgeInsets.only(top:20),
+                  child: 
+                    Text("Email",
+                      style: TextStyle(fontSize: 20),
+                    ),
                   ),
                   Card(
                     child: ListTile(
                       leading: CircleAvatar(
                         child: Icon(Icons.email_outlined), ),
                         title: Text(auth.currentUser.email),
+                    ),
                   ),
-                  ),Padding(
+                  
+                  Padding(
                     padding: EdgeInsets.only(top: 20),
                     child: RaisedButton(
                       onPressed: () async {
@@ -71,11 +56,11 @@ class _ProfilePageState extends State<ProfilePage> {
                             context,
                             new MaterialPageRoute(
                                 builder: (context) => new LoginPage()
-                                ),
-                                );
+                            ),
+                        );
                       },
                       child: Text(
-                        "LogOut",
+                        "Log Out",
                         style: TextStyle(fontSize: 15, color: Colors.white),
                       ),
                       shape: RoundedRectangleBorder(
@@ -85,7 +70,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       elevation: 0,
                       padding: EdgeInsets.symmetric(vertical: 16),
                     ),
-                  )
+                  ),
                 ]),
               ),
             ],
